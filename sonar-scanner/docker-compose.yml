@@ -1,0 +1,13 @@
+version: "3"
+services:
+  sonarscanner:
+    image: sonarsource/sonar-scanner-cli:latest
+    container_name: sonar-scanner
+    restart: unless-stopped
+    environment:
+      - SONAR_HOST_URL=http://sonarqube:9000
+      - SONAR_LOGIN="9c7ce2fc046ffaa6ac9bb2a926511ecdd1bfaa45"
+    volumes:
+      - myapp:/home/stancobridge/idevosm/osmaxin/project/ventlio/ventlio-backend
+volumes:
+  myapp:
